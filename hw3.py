@@ -58,3 +58,16 @@ people = {
     'person2': {'name': 'Janet', 'last_name': 'Bird', 'gender': 'female'}}
 for key, person in people.items():
     print(f"{key} (LBYL):", retrieve_age_lbyl(person))
+
+4.
+import pandas as pd
+
+def read_data_with_pandas(filename="data.csv"):
+    try:
+        data = pd.read_csv(filename)  
+        return data
+    except FileNotFoundError:
+        print(f"Error: The file '{filename}' was not found.")
+        return None
+    except Exception as e:
+        print(f"An error occurred: {e}")
